@@ -7,15 +7,6 @@ config:
   drush: ^10
   config:
     php: .lando/php.ini
-  build_as_root:
-    - curl -sL https://deb.nodesource.com/setup | sudo bash -
-    - apt install -y nodejs
-    - apt install build-essential
-    - curl -L https://npmjs.com/install.sh | sh
-    - apt install npm
-    - npm install -g yarn
-    - npm install install gulp-cli -g
-    - npm install install gulp -D
 services:
   appserver:
     scanner: false
@@ -30,21 +21,47 @@ services:
     xdebug: true
     config:
       php: .lando/.php.ini
+    build_as_root:
+      - apt update
+      - apt install mlocate -y
+      - apt install sudo -y
+      - apt install nano -y
+      - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      - apt install -y nodejs
+      - apt install build-essential
+      - curl -L https://npmjs.com/install.sh | sh
+      - apt install npm
+      - npm install install gulp-cli -g
+      - npm install install gulp -D
+      - npm install node-sass@^6.0.0
+    run:
+      - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && npm install
+      - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && gulp compile
   node:
     type: node
     build:
-      - "yarn install -y"
+      - "yarn install -y --ignore-engines"
   pma:
     type: phpmyadmin
     hosts:
       - database
   search:
     type: solr:7
-    portforward: 8983
+    portforward: 8984
     core: drupal
     config:
       dir: .lando/solr/conf
 tooling:
+  bash:
+    service: appserver
+    cmd: /bin/bash
+  node:
+    service: appserver
+  gulp:
+    service: appserver
+    dir: /app/docroot/themes/custom/robertshell
+  npm:
+    service: appserver
   console:
     service: appserver
     cmd: "/app/vendor/bin/drupal --root=/app/docroot"
@@ -89,4 +106,4 @@ proxy:
   pma:
     - pma.robertshell.lndo.site
   search:
-    - search.robertshell.lndo.site:8983
+    - search.robertshell.lndo.site:8984
