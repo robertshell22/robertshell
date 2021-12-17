@@ -1,0 +1,92 @@
+name: robertshell
+recipe: drupal9
+config:
+  webroot: docroot
+  php: '8.0'
+  composer_version: '2.1.14'
+  drush: ^10
+  config:
+    php: .lando/php.ini
+  build_as_root:
+    - curl -sL https://deb.nodesource.com/setup | sudo bash -
+    - apt install -y nodejs
+    - apt install build-essential
+    - curl -L https://npmjs.com/install.sh | sh
+    - apt install npm
+    - npm install -g yarn
+    - npm install install gulp-cli -g
+    - npm install install gulp -D
+services:
+  appserver:
+    scanner: false
+    build:
+      - "composer global require drupal/coder dealerdirect/phpcodesniffer-composer-installer mglaman/drupal-check"
+      - 'export PATH="/var/www/.composer/vendor/bin"'
+      - "wget https://asm89.github.io/d/twig-lint.phar -P /var/www -O twig-lint.phar"
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "http://robertshell.lndo.site"
+        PHP_IDE_CONFIG: "serverName=robertshell.lndo.site"
+    xdebug: true
+    config:
+      php: .lando/.php.ini
+  node:
+    type: node
+    build:
+      - "yarn install -y"
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+  search:
+    type: solr:7
+    portforward: 8983
+    core: drupal
+    config:
+      dir: .lando/solr/conf
+tooling:
+  console:
+    service: appserver
+    cmd: "/app/vendor/bin/drupal --root=/app/docroot"
+  phpcs:
+    service: appserver
+    cmd: "phpcs"
+    options:
+    description: Run phpcs for given folder or file.
+  drupal-check:
+    service: appserver
+    cmd: "drupal-check"
+    options:
+    description: Run drupal-check for given folder or file.
+  twig-lint:
+    service: appserver
+    cmd: "php /var/www/twig-lint.phar"
+    options:
+    description: Run twig-lint for given folder or file.
+  eslint:
+    service: node
+    cmd: "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json"
+    options:
+    description: Run jshint for given folder or file.
+  stylelint:
+    service: node
+    cmd: "npx stylelint --config .stylelintrc.json"
+    options:
+    description: Run stylelint for given folder or file.
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root
+proxy:
+  appserver:
+    - robertshell.lndo.site
+  pma:
+    - pma.robertshell.lndo.site
+  search:
+    - search.robertshell.lndo.site:8983
