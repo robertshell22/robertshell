@@ -17,18 +17,6 @@ services:
     xdebug: true
     config:
       php: .lando/.php.ini
-    build_as_root:
-      - apt update
-      - apt install mlocate -y
-      - apt install sudo -y
-      - apt install nano -y
-      - curl -sL https://deb.nodesource.com/setup_10.x | bash -
-      - apt install -y nodejs
-      - npm install install gulp-cli -g
-      - npm install install gulp -D
-    run:
-      - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && npm install
-      - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && gulp compile
     overrides:
       environment:
         DRUSH_OPTIONS_URI: "http://robertshell.lndo.site"
@@ -37,6 +25,11 @@ services:
     type: node
     build:
       - "yarn install -y --ignore-engines"
+      - "npm install --global gulp-cli"
+      - "npm install gulp@^3.9.1 --save"
+    run:
+      - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && npm install
+      - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && gulp compile
   pma:
     type: phpmyadmin
     hosts:
@@ -46,12 +39,12 @@ tooling:
     service: appserver
     cmd: /bin/bash
   node:
-    service: appserver
+    service: node
   gulp:
     service: appserver
     dir: /app/docroot/themes/custom/robertshell
   npm:
-    service: appserver
+    service: node
   console:
     service: appserver
     cmd: "/app/vendor/bin/drupal --root=/app/docroot"

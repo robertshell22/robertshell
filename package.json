@@ -24,5 +24,8 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-no-browser-hacks": "^1.2.1",
     "stylelint-order": "^4.0.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }

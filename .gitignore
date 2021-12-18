@@ -46,3 +46,6 @@ errors.log
 node_modules
 yarn.lock
 /docroot/sites/default/settings.php
+/docroot/INSTALL.txt
+README.txt
+/docroot/README.md
