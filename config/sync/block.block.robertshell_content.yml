@@ -1,0 +1,22 @@
+uuid: 46c0044a-be10-4893-bb77-8d78b4077461
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - robertshell
+_core:
+  default_config_hash: mS1K-W63vdB25CSOM72vmLfoogqrd5cjLggOk5Yt0fw
+id: robertshell_content
+theme: robertshell
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

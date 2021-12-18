@@ -1,0 +1,20 @@
+uuid: 6287a66d-e511-494c-b9dd-8cf51a4dec58
+langcode: en
+status: true
+dependencies:
+  theme:
+    - robertshell
+_core:
+  default_config_hash: G9S2xcoqVCkv2KZgqf_qJu304J0EaGJXrbFL9whlFcg
+id: robertshell_local_actions
+theme: robertshell
+region: header
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

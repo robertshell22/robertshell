@@ -1,0 +1,9 @@
+uuid: 0a076432-d0c3-4eb8-979b-c9dd07968e86
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RrFAG1YWWoKAqH6kOJ3PqLafQ8nsc04OiF5wUOr-26U
+id: rebuild_theme_registry_from_admin_toolbar
+label: 'Rebuild theme registry from admin toolbar'
+route: admin_toolbar_tools.theme_rebuild

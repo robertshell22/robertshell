@@ -1,0 +1,10 @@
+uuid: c57d7808-a13f-44bc-9c64-c3bf6da90bde
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eLQXQD9C-dMAfypJY6dNKuutwKNPhIEloGpqdo8xl40
+id: varbase_html_code_block
+label: 'HTML code'
+revision: 1
+description: 'An HTML Code block contains a title and a body with an HTML text format.'

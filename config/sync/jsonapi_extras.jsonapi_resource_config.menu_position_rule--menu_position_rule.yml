@@ -1,0 +1,37 @@
+uuid: c5f93647-4588-4836-8a17-96908c352850
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_position
+_core:
+  default_config_hash: JA7yKCj9-UCtYuzMETpVod_N_vmGizhSD19Gr9tJ5Uw
+id: menu_position_rule--menu_position_rule
+disabled: true
+path: menu_position_rule/menu_position_rule
+resourceType: menu_position_rule--menu_position_rule
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  _core:
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+    disabled: false

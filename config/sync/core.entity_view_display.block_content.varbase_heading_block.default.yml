@@ -1,0 +1,31 @@
+uuid: 8e499d0f-6ab1-4a65-b662-298db7d7e0c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.varbase_heading_block
+    - field.field.block_content.varbase_heading_block.field_varbase_heading_size
+  module:
+    - ds
+    - options
+_core:
+  default_config_hash: iSpD8Ey5isDT92zZJcEReW76IO6UD2SivZobqfdauDs
+id: block_content.varbase_heading_block.default
+targetEntityType: block_content
+bundle: varbase_heading_block
+mode: default
+content:
+  field_varbase_heading_size:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: list_key
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,25 @@
+uuid: 41a0fd4a-13bf-47ff-a8cd-81d418670849
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - robertshell
+_core:
+  default_config_hash: NNfGuQymclxJa34vSbMeSqjMChId-AFFdozfp_Y4NPM
+id: robertshell_branding
+theme: robertshell
+region: navigation
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

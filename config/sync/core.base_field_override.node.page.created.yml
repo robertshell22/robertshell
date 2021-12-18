@@ -1,0 +1,20 @@
+uuid: 40903286-feff-4af9-89ac-906b8f019420
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+_core:
+  default_config_hash: HzvqjFIHPiiqBcmx8qpW6yueshUqq0tPJwBhfDhRQag
+id: node.page.created
+field_name: created
+entity_type: node
+bundle: page
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

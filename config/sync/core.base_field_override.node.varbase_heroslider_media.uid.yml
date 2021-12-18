@@ -1,0 +1,22 @@
+uuid: e9cdf70c-bc50-4148-b39d-3b56a55ccaeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.varbase_heroslider_media
+_core:
+  default_config_hash: rPeAmsp_oO1vWwYNwCYDPyk9egWZF3LI7xCqmahFwOU
+id: node.varbase_heroslider_media.uid
+field_name: uid
+entity_type: node
+bundle: varbase_heroslider_media
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

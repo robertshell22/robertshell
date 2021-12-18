@@ -1,0 +1,25 @@
+uuid: 73e1d6ac-3631-40c5-98f5-ba7996e0bfd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.varbase_rich_text_block
+    - field.field.block_content.varbase_rich_text_block.body
+  module:
+    - text
+_core:
+  default_config_hash: bougXZAFlOlVbYxU9C38qFXaLCjQdO1Iwm7u2zRqCNA
+id: block_content.varbase_rich_text_block.default
+targetEntityType: block_content
+bundle: varbase_rich_text_block
+mode: default
+content:
+  body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,12 @@
+uuid: f390c741-aacb-4bc5-838f-7196690ddc32
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 6J3icT8NohqRfGs1Yy8WqYU-sIYMndaqS4DZ7HLx7E0
+id: media.s07_standard
+label: 'Size 07 standard 16:9'
+targetEntityType: media
+cache: true

@@ -1,0 +1,22 @@
+uuid: 9c6ef54a-d1b5-4bb6-8f47-c3e002bad422
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - robertshell
+_core:
+  default_config_hash: j05pbKuj9Wfop3Rz2aVCBO6oM-Gft11rqwxbMttWr50
+id: robertshell_help
+theme: robertshell
+region: help
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

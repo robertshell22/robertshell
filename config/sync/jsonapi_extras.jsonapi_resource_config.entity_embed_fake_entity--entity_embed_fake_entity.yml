@@ -1,0 +1,17 @@
+uuid: dbbdf49b-7288-40cf-a7c0-399e9c426f6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_embed
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+_core:
+  default_config_hash: kENbthexGv5ImEvQQWN8Pzy_z9QsBDLGeAcbpvE17z4
+id: entity_embed_fake_entity--entity_embed_fake_entity
+disabled: true
+path: entity_embed_fake_entity/entity_embed_fake_entity
+resourceType: entity_embed_fake_entity--entity_embed_fake_entity
+resourceFields: ''

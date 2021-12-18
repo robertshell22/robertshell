@@ -1,0 +1,20 @@
+uuid: 69c51341-1446-440b-8dee-84463fa8a40f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - robertshell
+_core:
+  default_config_hash: 1f3SKPk8jtkxF__zNY6bZUle5rMoR5qi29oHJ9jjQ6A
+id: robertshell_page_title
+theme: robertshell
+region: header
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

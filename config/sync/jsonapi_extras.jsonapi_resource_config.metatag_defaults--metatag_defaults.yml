@@ -1,0 +1,37 @@
+uuid: 48f326c7-d9ff-4efd-bf0e-df028f931593
+langcode: en
+status: true
+dependencies:
+  module:
+    - metatag
+_core:
+  default_config_hash: XhKRcMZjQUlwoFVE60JwX5j66MIQ9MSRGElfmpvEr7c
+id: metatag_defaults--metatag_defaults
+disabled: true
+path: metatag_defaults/metatag_defaults
+resourceType: metatag_defaults--metatag_defaults
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  _core:
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+    disabled: false

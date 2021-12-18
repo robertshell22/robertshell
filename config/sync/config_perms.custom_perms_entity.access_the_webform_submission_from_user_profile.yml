@@ -1,0 +1,9 @@
+uuid: b3b36f7d-07e1-4993-93c3-db2c6b813dee
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 96Uu5-ZzGAG3tDslDQ_d_yincun83qau1V0OnGxAGz8
+id: access_the_webform_submission_from_user_profile
+label: 'Access the webform submission from user profile'
+route: entity.webform_submission.user

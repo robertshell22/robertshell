@@ -1,0 +1,22 @@
+uuid: 573c0ef7-94c2-449c-810e-33141edf9666
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - robertshell
+_core:
+  default_config_hash: huxwwvGRW6sCzkLbI-SIUmbV2FU6aENqCjH8AxuGNfA
+id: robertshell_messages
+theme: robertshell
+region: header
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: a57e65b8-98b0-491b-bea9-9d0c734848fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 7pOYKD79zF5sXVYhsziqmVK2BKaXqmArFoH2VRwwB3I
+id: node.text_teaser_large
+label: 'Text teaser - large'
+targetEntityType: node
+cache: true

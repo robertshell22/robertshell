@@ -1,0 +1,9 @@
+uuid: 05b384be-3e4d-4b02-ba4d-ae0961337064
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-dq3uMk1tgzMO6ZrxajKV33rIp8PyuamEgxtau4f3Fc'
+id: blb_col_3
+label: 'Bootstrap 3 Cols'
+number_of_columns: '3'

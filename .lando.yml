@@ -14,10 +14,6 @@ services:
       - "composer global require drupal/coder dealerdirect/phpcodesniffer-composer-installer mglaman/drupal-check"
       - 'export PATH="/var/www/.composer/vendor/bin"'
       - "wget https://asm89.github.io/d/twig-lint.phar -P /var/www -O twig-lint.phar"
-    overrides:
-      environment:
-        DRUSH_OPTIONS_URI: "http://robertshell.lndo.site"
-        PHP_IDE_CONFIG: "serverName=robertshell.lndo.site"
     xdebug: true
     config:
       php: .lando/.php.ini
@@ -26,17 +22,17 @@ services:
       - apt install mlocate -y
       - apt install sudo -y
       - apt install nano -y
-      - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      - curl -sL https://deb.nodesource.com/setup_10.x | bash -
       - apt install -y nodejs
-      - apt install build-essential
-      - curl -L https://npmjs.com/install.sh | sh
-      - apt install npm
       - npm install install gulp-cli -g
       - npm install install gulp -D
-      - npm install node-sass@^6.0.0
     run:
       - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && npm install
       - cd $LANDO_MOUNT/docroot/themes/custom/robertshell && gulp compile
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "http://robertshell.lndo.site"
+        PHP_IDE_CONFIG: "serverName=robertshell.lndo.site"
   node:
     type: node
     build:
@@ -45,12 +41,6 @@ services:
     type: phpmyadmin
     hosts:
       - database
-  search:
-    type: solr:7
-    portforward: 8984
-    core: drupal
-    config:
-      dir: .lando/solr/conf
 tooling:
   bash:
     service: appserver
@@ -105,5 +95,3 @@ proxy:
     - robertshell.lndo.site
   pma:
     - pma.robertshell.lndo.site
-  search:
-    - search.robertshell.lndo.site:8984
